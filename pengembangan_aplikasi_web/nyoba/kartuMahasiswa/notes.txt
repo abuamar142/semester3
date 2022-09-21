@@ -1,0 +1,6 @@
+Aplikasi Pembuat Kartu Pelajar
+
+Cara menggunakan:
+    - Install python
+    - Install flask
+    - Running programnya dengan mengetik "python app.py"

@@ -1,0 +1,23 @@
+body {
+    background-color: cornsilk;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: whitesmoke;
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4) ; 
+    transform: translate(0%, 20%);
+}
+
+.card img {
+    width: 200px;
+}
+
+.card:hover {
+    box-shadow: 0 15px 32px 0 rgba(0, 0, 0, 0.4) ; 
+}

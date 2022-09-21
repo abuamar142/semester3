@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/card.css') }}">
   <title>Status Card</title>
 </head>
 <body>
   <div class="card">
     <h1>Kartu Mahasiswa</h1>
-    <img src="{{ url_for('static', filename='man.svg') }}" alt="">
+    {% if gender == 'option1' %}
+      <img src="{{ url_for('static', filename='man.svg') }}" alt="">
+    {% else %}
+      <img src="{{ url_for('static', filename='woman.svg') }}" alt="">
+    {% endif %}
     <div class="card-desk">
       <h3>{{ nama }}</h3>
       <p>{{ nim }}</p>
