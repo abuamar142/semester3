@@ -1,0 +1,16 @@
+body {
+    padding: 100px;
+    background-color: cornsilk;
+    /* position: absolute; */
+}
+
+.form-check {
+    display: inline-flex;
+    justify-content: center;
+    text-indent: 5px;
+    margin-right: 25px;
+}
+
+.btn {
+    width: 100%;
+}
