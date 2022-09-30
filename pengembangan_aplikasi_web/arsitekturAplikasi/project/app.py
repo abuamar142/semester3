@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, flash
 from models import item
 
 app = Flask(__name__)
@@ -23,6 +23,8 @@ def form():
             model.setGender(gender)
 
             return redirect('/card')
+        else:
+            return render_template('form.html', warning = True)
 
     return render_template('form.html')
 

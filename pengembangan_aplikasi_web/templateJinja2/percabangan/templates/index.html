@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Template Keempat</title>
+</head>
+<body>
+    <h2>Contoh Template Keempat</h2>
+
+    {# menampilkan nilai variabel a #}
+    Nilai a = {{ a }} <br/>
+
+    {# memeriksa nilai a #}
+    {% if a < 0 %}
+        {{ a }} adalah bilangan negatif.
+    {% elif a == 0 %}
+        {{ a }} adalah sama dengan nol.
+    {% else %}
+        {{ a }} adalah bilangan positif.
+    {% endif %}
+</body>
+</html>

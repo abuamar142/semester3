@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Template Kedua</title>
+</head>
+<body>
+    <h2>Contoh Template Kedua</h2>
+    <p>
+        a = {{ a }} <br/>
+        b = {{ b }} <br/>
+        a + b = {{ a + b }} <br/>
+        <br/>
+        c = {{ c }} <br/>
+        {% if a == c %}
+            <p>Nilai A sama dengan C</p>
+        {% endif %}
+        <br/>
+        {% if a == 20 and b == 30 %}
+            <p>Anda benar</p>
+        {% endif %}
+    </p>
+</body>
+</html>

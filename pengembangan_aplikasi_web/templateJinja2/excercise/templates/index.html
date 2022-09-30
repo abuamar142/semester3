@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" type="text/css">
+    <title>Excercise 1</title>
+</head>
+<body">
+    <h1>History Pengeluaran</h1>
+    <a href="/add">
+      <button type="button" class="btn btn-outline-dark">Tambah Transkasi</button>
+    </a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Keterangan</th>
+          <th>Jumlah</th>
+          <th>Jenis</th>
+          <th>Waktu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Makan</td>
+          <td>15000</td>
+          <td>Keluar</td>
+          <td>Kamis, 29 September 2022</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th style="background-color: whitesmoke;">Total Saldo</th>
+          <td>-15000</td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+</html>

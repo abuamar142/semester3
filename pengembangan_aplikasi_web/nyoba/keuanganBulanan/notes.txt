@@ -1,0 +1,12 @@
+aplikasi pencatat keuangan bulanan
+
+cara menggunakan:
+1. aktifkan venv yang terinstall flask
+2. run "python app.py"
+
+menu menu yang ada di aplikasi ini:
+1. daftar transaksi
+    - list tampilan history transaksi
+        - kolom nomor, keterangan, uang masuk, uang keluar, sisa saldo
+    - tombol add transaksi untuk
+2. penambahan transaksi

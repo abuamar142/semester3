@@ -48,5 +48,11 @@
           <button type="submit" class="btn btn-primary">Buat Id card</button>
         </a>
     </form>
+    <br>
+    {% if warning %}
+      <div class="alert alert-danger" role="alert">
+        Lengkapi form terlebih dahulu...!!!
+      </div>
+    {% endif %}
 </body>
 </html>
