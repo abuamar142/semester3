@@ -1,6 +1,3 @@
-from curses import has_ic
-
-
 kelas = [
     {
         'npm': '2121001',
@@ -16,9 +13,9 @@ kelas = [
                 'kode': 'INF002',
                 'nama': 'Pengantar Teknologi Informasi',
                 'sks': 2,
-                'nilai': 'A-'
-            }
-        ]
+                'nilai': 'A-',
+            },
+        ],
     },
     {
         'npm': '2121002',
@@ -28,16 +25,16 @@ kelas = [
                 'kode': 'INF001',
                 'nama': 'Konsep Pemrograman',
                 'sks': 4,
-                'nilai': 'B'
+                'nilai': 'B',
             },
             {
                 'kode': 'INF002',
                 'nama': 'Pengantar Teknologi Informasi',
                 'sks': 2,
-                'nilai': 'B+'
+                'nilai': 'B+',
             }
-        ]
-    }
+        ],
+    },
 ]
 
 def hitung_ipk(mahasiswa):
@@ -46,7 +43,6 @@ def hitung_ipk(mahasiswa):
         'B': 3, 'B-': 2.75, 'BC': 2.5, 'C+': 2.25,
         'C': 2,
         'D': 1,
-        'E': 0
     }
     total_sks = 0
     total_skor = 0
@@ -54,7 +50,7 @@ def hitung_ipk(mahasiswa):
         sks = hasil_studi['sks']
         nilai = hasil_studi['nilai']
         total_sks += sks
-        total_skor += sks * skor.get(nilai, 0)
+        total_skor += sks * skor.get(nilai, 0,)
         # jika nilai tidak ditemukan maka defaultnya 0, tidak error
     ipk = total_skor / total_sks
     return ipk
