@@ -1,0 +1,16 @@
+# bentuk properti
+# bentuk 2 dan 3 cuma preferensi, boleh digunakan kapan aja
+# properti tidak dapat menambah parimeter tambahan
+class Triangle:
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+
+    @property    
+    def area(self):
+        return 1/2 * self.base * self.height
+        
+x = Triangle(3, 4)
+print(x.base, x.height, x.area)
+x.base = 6
+print(x.base, x.height, x.area)

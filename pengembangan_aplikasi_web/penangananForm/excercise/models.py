@@ -1,3 +1,7 @@
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import InputRequired, Length
+
 data = []
 
 class Transaksi:
@@ -29,3 +33,8 @@ class Transaksi:
         }
 
         data.remove(transaksi)
+
+class FormData(FlaskForm):
+    global keterangan, nominal
+    keterangan = StringField('Keterangan', validators=[InputRequired('Keterangan harus diisi...!!!'), Length(max=100)])
+    nominal = StringField('Nominal', validators=[InputRequired('Nominal harus diisi...!!!'), Length(min=4)])

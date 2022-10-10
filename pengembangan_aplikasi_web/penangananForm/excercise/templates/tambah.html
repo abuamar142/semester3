@@ -10,17 +10,18 @@
 </head>
 <body>
     <h1>Tambah Transaksi</h1>
+    <p>{{ form.csrf_token }}</p>
     <form method="POST">
         <div class="row mb-3">
-          <label for="inputKeterangan" class="col-sm-2 col-form-label">Keterangan</label>
+          <label for="inputKeterangan" class="col-sm-2 col-form-label">{{ form.keterangan.label }}</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputKeterangan" name="keterangan">
+            <input type="text" class="form-control" id="inputKeterangan" name="keterangan">{{ form.keterangan() }}{{ showerror('keterangan')}}
           </div>
         </div>
         <div class="row mb-3">
-          <label for="inputNominal" class="col-sm-2 col-form-label">Nominal</label>
+          <label for="inputNominal" class="col-sm-2 col-form-label">{{ form.nominal.label }}</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputNominal" name="nominal">
+            <input type="text" class="form-control" id="inputNominal" name="nominal">{{ form.nominal() }}{{ showerror('nominal')}}
           </div>
         </div>
         <div class="row mb-3">
