@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Responsi</title>
+</head>
+<body>
+    {% macro tampilerror(teks) %}
+        {% if errors %}
+            {% for x in errors %}
+                {% if teks in x[0] %}
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ x[1][0] }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endmacro %}
+    <h2 style="text-align: center; margin-top: 30px;">
+        <strong>
+            SELAMAT DATANG ACHMAD YANI MUDA <br>
+            DI FAKULTAS TEKNIK DAN TEKNOLOGI INFORMASI <br>
+            UNIVERSITAS JENDERAL ACHMAD YANI YOGYAKARTA
+        </strong>
+    </h2>
+    {{ form.csrf_token }}
+    <form method="post" style="padding: 50px;">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email Address</label>
+          {{ form.email(class_='form-control', placeholder_='Masukkan alamat email')}}
+        </div>
+        {{ tampilerror('email') }}
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            {{ form.password(class_="form-control", placeholder="Masukkan kata kunci") }}
+        </div>
+        {{ tampilerror('password') }}
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember password</label>
+        </div>
+        <p>
+            {{ form.login(class_='btn btn-outline-primary form-control mt-5') }}
+        </p>
+        {% if salah %}
+            <div class="alert alert-danger mt-2" role="alert">
+                Kombinasi email dan password yang anda masukkan tidak sesuai!
+            </div>
+        {% endif %}
+    </form>
+</body>
+</html>

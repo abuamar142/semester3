@@ -9,7 +9,6 @@ def index():
     form = Kontak()
     atur = Manage
     if request.method == 'POST':
-        # melakukan validasi data didalam form
         if form.validate():
             nama = form.nama.data
             nomor_telepon = form.nomor_telepon.data

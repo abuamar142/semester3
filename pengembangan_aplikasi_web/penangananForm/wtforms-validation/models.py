@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField
-from wtforms.validators import InputRequired, Length, Email, URL
+from wtforms.validators import *
 
 class KomentarForm(FlaskForm):
     nama = StringField('Nama: ', validators=[InputRequired('Nama harus diisi!'), Length(max=25)])

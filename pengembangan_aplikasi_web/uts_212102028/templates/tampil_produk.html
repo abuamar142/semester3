@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Tampil Produk</title>
+</head>
+<body style="margin: 20px;">
+    <table class="table table-bordered" style="text-align: center;">
+        <thead class="table-dark">
+            <tr>
+                <th>Id Produk</th>
+                <th>Nama Produk</th>
+                <th>Deskripsi</th>
+                <th>Harga</th>
+                <th>Tersedia</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for produk in container %}
+            <tr>
+                <th>{{ produk[0] }}</th>
+                <th>{{ produk[1] }}</th>
+                <th style="width: 1000px;">{{ produk[2] }}</th>
+                <th>{{ produk[3] }}</th>
+                <th>{{ produk[4] }}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
