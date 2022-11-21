@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Flask-MySQL</title>
+</head>
+<body>
+    <h2>Ubah Data</h2>
+    <form action="{{ url_for('update_process')}}" method="post">
+        Nama : <br>
+        <input type="text" name="nama" value="{{ data[1] }}" size="50" maxlength="50"> <br>
+        No Telepon : <br>
+        <input type="text" name="no_telp" value="{{ data[2] }}" size="20" maxlength="20"> <br>
+        <input type="hidden" name="no" value="{{ data[0] }}">
+        <p><input type="submit" value="Simpan"></p> <br>
+    </form>
+    {% if errorNama %}
+        <p style="color: red;">Isi form nama dengan benar..!!</p>
+    {% endif %}
+    {% if errorNo %}
+        <p style="color: red;">Isi form nomor telepon dengan benar..!!</p>
+    {% endif %}
+</body>
+</html>

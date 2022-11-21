@@ -13,14 +13,26 @@
             <td>No</td>
             <td>Nama</td>
             <td>No Telp</td>
+            <td>Ubah</td>
+            <td>Hapus</td>
         </tr>
-        {% for baris in container %}
+        {% for index, baris in container %}
         <tr>
-            <td>{{ baris[0] }}</td>
+            <td>{{ index + 1 }}</td>
             <td>{{ baris[1] }}</td>
             <td>{{ baris[2] }}</td>
+            <td><a href="{{ url_for('update', no=baris[0]) }}">Ubah</a></td>
+            <td><a href="#" onclick="myFunction(`{{baris[0]}}`)">Hapus</a></td>
         </tr>
         {% endfor %}
     </table>
+    <p><a href="{{ url_for('insert') }}">Tambah Data</a></p>
 </body>
+<script>
+    function myFunction(no) {
+      if (confirm("Apakah anda yakin mau menghapus data?")) {
+        window.location.replace(`http://localhost:5000/delete/${no}`);
+      }
+    }
+</script>
 </html>
