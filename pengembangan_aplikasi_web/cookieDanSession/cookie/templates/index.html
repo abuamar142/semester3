@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Cookie</title>
+</head>
+<body>
+    <h2>Contoh Cookie</h2>
+    <p style="color: red;">{{ msg }}</p>
+    <p>
+        Aksi: <br>
+        <a href="{{ url_for('ubahCookie') }}">Ubah</a>
+        <a href="{{ url_for('hapusCookie') }}">Hapus</a>
+    </p>
+    <p>Untuk melihat cookie, gunakan link di bawah ini.</p>
+    <p>
+        Aksi: <br>
+        <a href="{{ url_for('halaman1') }}">Halaman1</a>
+        <a href="{{ url_for('halaman2') }}">Halaman2</a>
+    </p>
+</body>
+</html>
