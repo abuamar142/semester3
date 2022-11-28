@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+<body style="padding: 100px; text-align: center;">
+    <a class="btn btn-danger mb-3 float-right" href="{{ url_for('logout') }}" role="button">Logout</a><br>
+    <h1 style="margin-bottom: 100px; margin-top: 50px;">Anda berada pada halaman {{ role }}</h1>
+    <p style="margin-bottom: 100px;">Selamat datang {{ nama }}</p>
+    {% if admin %}
+        <table class="table table-bordered border-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Hapus</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in data %}
+                    <tr>
+                        <th scope="row">{{ data[0] }}</th>
+                        <td>{{ data[1] }}</td>
+                        <td>{{ data[2] }}</td>
+                        <td>{{ data[3] }}</td>
+                        <td>{{ data[4] }}</td>
+                        <td><a href="{{ url_for('delete', no=data[0]) }}">Hapus data</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
