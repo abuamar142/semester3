@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Gambar</title>
+</head>
+<body style="padding: 100px;">
+    <h2 style="text-align: center; margin-bottom: 50px;">Preview Gambar No : {{ no }}</h2>
+    <div class="card" style="width: 18rem;">
+        <img src="/static/uploads/{{ 'file_terunggah_' + str(no) }}" class="card-img-top" alt="{{ 'file_terunggah_' + str(no) }}">
+        <div class="card-body">
+            <p class="card-text">{{ 'file_terunggah_' + str(no) }}</p>
+        </div>
+    </div>
+</body>
+</html>
