@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Flask-MySql</title>
+</head>
+<body>
+    <h2>Contoh Flask-MySql</h2>
+    <table border="1">
+        <tr>
+            <td>No</td>
+            <td>Nama</td>
+            <td>No Telp</td>
+            <td>Ubah</td>
+            <td>Hapus</td>
+        </tr>
+        {% for index, baris in container %}
+        <tr>
+            <td>{{ index + 1 }}</td>
+            <td>{{ baris[1] }}</td>
+            <td>{{ baris[2] }}</td>
+            <td><a href="{{ url_for('update', no=baris[0]) }}">Ubah</a></td>
+            <td><a href="#" onclick="myFunction(`{{baris[0]}}`)">Hapus</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ url_for('insert') }}">Tambah Data</a></p>
+</body>
+<script>
+    function myFunction(no) {
+      if (confirm("Apakah anda yakin mau menghapus data?")) {
+        window.location.replace(`http://localhost:5000/delete/${no}`);
+      }
+    }
+</script>
+</html>
